@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('My Flutter Practice APP'),
       ),
-      body: const GradientContainer(),
+      body: GradientContainer(),
     );
   }
 }
