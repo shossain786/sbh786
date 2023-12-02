@@ -11,11 +11,14 @@ class DiceRoller extends StatefulWidget {
   }
 }
 
+// avoding object creation of Random class everytime its being called.
+final random = Random();
+
 class _DiceRollerState extends State<DiceRoller> {
   //var activeDiceImage = 'assets/images/dice-5.png';
 
   static int getRandomNum(int range) {
-    return Random().nextInt(range) + 1;
+    return random.nextInt(range) + 1;
   }
 
   int diceNum = getRandomNum(6);
