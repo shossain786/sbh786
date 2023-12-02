@@ -13,16 +13,21 @@ class DiceRoller extends StatefulWidget {
 
 class _DiceRollerState extends State<DiceRoller> {
   //var activeDiceImage = 'assets/images/dice-5.png';
-  int diceNum = Random().nextInt(6) + 1;
+
+  static int getRandomNum(int range) {
+    return Random().nextInt(range) + 1;
+  }
+
+  int diceNum = getRandomNum(6);
+
   void rollDice() {
 // ignore: avoid_print
     print('Changing the dice!');
-    diceNum = Random().nextInt(6) + 1;
     setState(() {
       // this need to use for changing the field in application run time.
       // This function re execute the build function
       //activeDiceImage = 'assets/images/dice-$diceNum.png';
-      diceNum = Random().nextInt(6) + 1;
+      diceNum = getRandomNum(6);
     });
   }
 
